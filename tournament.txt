@@ -1,0 +1,30 @@
+--------------------------------------------------------------------------------
+Section 0 - Line up
+--------------------------------------------------------------------------------
+Player 0 (P0): Win, winning
+        wewillwin
+--------------------------------------------------------------------------------
+Section 1 - Player vs. Player
+--------------------------------------------------------------------------------
+Each column shows pts/round earned against each other player:
+             P0
+vs. P0 :      0
+TOTAL  :      0
+--------------------------------------------------------------------------------
+Section 2 - Leaderboard
+--------------------------------------------------------------------------------
+Average points per round:
+Team name (P#):  Score      with strategy name
+Win       (P0):          0 points with winning                                 
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+team1--------------------------------------------------------------------------------
+# three strings team_name, strategy_name, and strategy_description
+# and a function move(my_history, their_history, my_score, their_score)
+team_name = 'Win'
+strategy_name = 'winning'
+strategy_description = 'wewillwin'
+def move(my_history, their_history, my_score, their_score):
+    return--------------------------------------------------------------------------------
+Section 3 - Game Data for Team Win
+--------------------------------------------------------------------------------
