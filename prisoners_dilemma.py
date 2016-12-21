@@ -1,7 +1,6 @@
 from __future__ import print_function
 
-'I think this is working...'
-
+# Code forked by Sade66
 ##### 
 # Computer Science and Software Engineering
 # PLTW AP CS Principles
