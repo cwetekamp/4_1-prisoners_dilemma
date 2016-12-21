@@ -32,21 +32,21 @@ from __future__ import print_function
 #######
 import random
 import os.path              
-    
+import globe
+from globe import *
 import example0, example1, example2, example3
 import example4, example5, example6, example7
 import team0, team1, team2, team3, team4
 import team5, team6, team7, team8, team9
-import team10, team11, team12, team13, team14
+import team10
+
 betray = example1
 collude = example0
 
 modules = [example0, example1, example2, example3, example4, example5, example6, example7,
-team0, team1, team2, team3, team4, team5, team6, team7, team8, team9, team10, 
-team11, team12, team13, team14]
+team0, team1, team2, team3, team4, team5, team6, team7, team8, team9, team10, globe]
 for module in modules:
     reload(module)
-    print ('reloaded',module)
     for required_variable in ['team_name', 'strategy_name', 'strategy_description']:
         if not hasattr(module, required_variable):
             setattr(module, required_variable, 'missing assignment')
@@ -134,9 +134,17 @@ def play_round(player1, player2, score1, score2, moves1, moves2):
     
     ERROR = -250
     
+    globe.pn = [str(player1).split("'")[1],str(player2).split("'")[1]] #Parse both team names
+    if globe.pn[0] == 'team0' or globe.pn[1] == 'team0' and team0.win == 1:
+        globe.omoves = player1.move(moves2, moves1, score2, score1)
+        globe.globe_run()
+        action1 = globe.omoves
+    else:
+        action1 = player1.move(moves1, moves2, score1, score2)
+        
     # Get the two players' actions and remember them.
-    action1 = player1.move(moves1, moves2, score1, score2)
     action2 = player2.move(moves2, moves1, score2, score1)
+    
     if (type(action1) != str) or (len(action1) != 1):
         action1=' '
     if (type(action2) != str) or (len(action2) != 1):
@@ -378,5 +386,5 @@ def post_to_file(string, filename='tournament.txt', directory=''):
  
 ### Call main_play() if this file is executed
 if __name__ == '__main__':
-    scores, moves, reports = main_play(modules[0:4])   
+    scores, moves, reports = main_play(modules[8:19])   
     section0, section1, section2, section3 = reports
